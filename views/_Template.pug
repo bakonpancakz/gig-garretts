@@ -24,6 +24,7 @@ html(lang='en')
         //- Document Styles
         title #{FILENAME} - #{SITE_NAME}
         link(rel='stylesheet' href=`/assets/global.css?v=${VERSION}`)
+        link(rel='stylesheet' href=`/assets/views.css?v=${VERSION}`)
         style(type='text/css').
             :root {
                 --transition-time: 200ms;
@@ -64,7 +65,7 @@ html(lang='en')
         //- Content Section
         div(class='content-wrapper' id='section-content')
             block pageEscaped   
-            div(class='content-section')
+            div(class='section-content')
                 block pageContent
 
         //- Footer Section
@@ -73,7 +74,7 @@ html(lang='en')
 
                 //- Information
                 div(class='flex-sbs-section')
-                    p(class='text-header') Social
+                    p(class='text-footerheader') Contact
                     a(class='link-with-icon' href='tel:+16692805400') 
                         i(class='fa-solid fa-phone icon-colored')
                         span +1 (669) 280-5400
@@ -87,7 +88,7 @@ html(lang='en')
                         i(class='fa-brands fa-instagram icon-colored')
                         span @garrettsbargrill
 
-                    p(class='text-header') Location
+                    p(class='text-footerheader') Location
                     a(href='https://maps.app.goo.gl/RvcGZRTysG77B7dE9' target='_blank')
                         p #{MAP_STREET}
                         p #{MAP_CITY}

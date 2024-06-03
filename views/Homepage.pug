@@ -1,4 +1,31 @@
 extends _Template.pug
+block pageEscaped
+    div(class='widget-hero special-shadow' style=`background-image: url('/assets/homepage/hero.jpg')`)
+        div(class='hero-dimmer')
+        div(class='hero-content')
+            p(class='text-hero') WE ARE OPEN!
+            div(class='flex-sbs' style='gap:16px')
+                a(class='button-hero' href='/menu') OUR MENU 
+                a(class='button-hero' href='/events') HOST AN EVENT 
+        
 block pageContent
-    div(style='height:600px;text-align:center;display:grid;align-items: center;')
-        p(style='font-weight:bold;font-size:xx-large;color:var(--color-accent)') YOUR CONTENT HERE
+    div(class='widget widget-paragraph')
+        p(class='text-header') ABOUT US
+        p 
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+    div(class='widget widget-paragraph')
+        p(class='text-header') OUR FOOD
+        p 
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    
+    div(class='widget widget-images')
+        img(class='special-shadow' src='/assets/homepage/slideshow-1.jpg' alt='Slideshow Image #1')
+        img(class='special-shadow' src='/assets/homepage/slideshow-2.jpg' alt='Slideshow Image #2')
+        img(class='special-shadow' src='/assets/homepage/slideshow-3.jpg' alt='Slideshow Image #3')
