@@ -1,0 +1,156 @@
+/* Global Behaviour */
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    /* Makes Links act like Paragraph Elements */
+    display: block;
+}
+
+body,
+p,
+a {
+    /* Removes Default Margin and Padding from Elements */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Text Styles */
+p,
+a,
+span {
+    /* Stylize Text Elements */
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 4px 0;
+}
+
+a:hover[href],
+a:focus-visible[href] {
+    text-decoration: underline;
+}
+
+a.link-with-icon svg {
+    height: 16px;
+    width: 16px;
+    padding: 0 4px;
+}
+
+p.text-header {
+    font-size: small;
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+
+/* Layout Styles */
+div.section-wrapper {
+    width: 100%;
+    height: fit-content;
+}
+
+div.section-content {
+    max-width: 1024px;
+    margin: auto;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+div.flex-sbs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.flex-sbs-section {
+    flex-basis: 100%;
+    max-width: 50%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+div#section-footer {
+    background-color: #fdf7f3;
+    border-top: 2px solid var(--color-accent);
+}
+
+
+/* Navigation Styling */
+img.image-navlogo {
+    width: 128px;
+    height: 80px;
+    object-fit: contain;
+}
+
+div#nav-info {
+    display: grid;
+    align-content: center;
+    text-align: end;
+}
+
+div.navigation-wrapper {
+    width: 100%;
+    background-color: var(--color-accent);
+}
+
+div#nav-links {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+a.link-nav {
+    padding: 8px 16px;
+    font-weight: bold;
+    color: var(--color-text-light);
+    transition: var(--transition-time) ease-in-out background-color;
+}
+
+a.link-nav:hover {
+    background-color: #c42226;
+    text-decoration: none;
+}
+
+
+/* Special Effects */
+div.special-shadow {
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / .03)) drop-shadow(0 8px 5px rgb(0 0 0 / .08));
+}
+
+.icon-colored {
+    color: var(--color-accent);
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Mobile Styling */
+@media (max-width: 640px) {
+
+    div.flex-sbs {
+        flex-wrap: wrap;
+    }
+
+    div.flex-sbs-section {
+        max-width: unset;
+        text-align: center;
+    }
+
+    div#nav-info {
+        text-align: center;
+    }
+
+    div#nav-links {
+        display: block;
+    }
+
+    a.link-nav {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+}

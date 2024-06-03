@@ -1,0 +1,110 @@
+- var SITE_URL = 'https://garrett.bar'
+- var SITE_NAME = 'Garrett\'s Bar & Grill'
+- var SITE_ACCENT = '#9E1C1F'
+- var MAP_STREET = '605 Macara Ave,'
+- var MAP_CITY = 'Sunnyvale, CA 94085' 
+- var MAP_URL = 'https://maps.app.goo.gl/RvcGZRTysG77B7dE9'
+- var MAP_HOURS = 'Tues-Sun 11AM - 7PM'
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport'  content='width=device-width, initial-scale=1.0')
+        //- Site Metadata & OG Tags
+        link(rel='icon' href='/assets/site-favicon.png' type='image/png')
+        meta(property='og:image'    content=`${SITE_URL}/assets/images/site-logo.png`)
+        meta(property='og:title'    content=`${SITE_NAME} - ${FILENAME}`)
+        meta(property='theme-color' content=SITE_ACCENT)
+        //- Fonts & Icons
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin)
+        link(href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js' integrity='sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==' crossorigin='anonymous' referrerpolicy='no-referrer')
+        //- Document Styles
+        title #{FILENAME} - #{SITE_NAME}
+        link(rel='stylesheet' href=`/assets/global.css?v=${VERSION}`)
+        style(type='text/css').
+            :root {
+                --transition-time: 200ms;
+                --color-text-light: #f0f0f0;
+                --color-text: #080808;
+                --bg-layer-0: #a0a0a0;
+                --color-accent: #{SITE_ACCENT};
+            }
+    body
+        //- Navigation Section
+        div(class='section-wrapper')
+            //- Header
+            div(class='section-content flex-sbs' id='section-navigation')
+                //- Company Logo
+                div(class='flex-sbs-section')
+                    img(src=`/assets/site-logo.png?v=${VERSION}` class='image-navlogo')
+
+                //- Quick Info
+                div(class='flex-sbs-section' id='nav-info')
+                    //- Times
+                    a(class='link-with-icon' id='info-hours')
+                        span #{MAP_HOURS}
+                        i(class='fa-solid fa-clock icon-colored')
+                    //- Location
+                    a(class='link-with-icon' target='_blank' href=MAP_URL)
+                        span #{MAP_STREET} #{MAP_CITY}
+                        i(class='fa-solid fa-location-dot icon-colored')
+                    script.
+
+            //- Links
+            div(class='navigation-wrapper special-shadow')
+                div(class='section-content' id='nav-links')
+                    a(class='link-nav' href='/') HOME
+                    a(class='link-nav' href='/menu') MENU
+                    a(class='link-nav' href='/events') EVENTS
+                    a(class='link-nav' href='/contact') CONTACT
+        
+        //- Content Section
+        div(class='content-wrapper' id='section-content')
+            block pageEscaped   
+            div(class='content-section')
+                block pageContent
+
+        //- Footer Section
+        div(class='content-wrapper' id='section-footer')
+            div(class='section-content flex-sbs')
+
+                //- Information
+                div(class='flex-sbs-section')
+                    p(class='text-header') Social
+                    a(class='link-with-icon' href='tel:+16692805400') 
+                        i(class='fa-solid fa-phone icon-colored')
+                        span +1 (669) 280-5400
+                    a(class='link-with-icon' href='mailto:contact@garrett.bar') 
+                        i(class='fa-solid fa-envelope icon-colored')
+                        span contact@garrett.bar
+                    a(class='link-with-icon' href='https://www.facebook.com/garrettsbargrill' target='_blank')
+                        i(class='fa-brands fa-facebook icon-colored')
+                        span @garrettsbargrill
+                    a(class='link-with-icon' href='https://www.instagram.com/garrettsbargrill/' target='_blank')
+                        i(class='fa-brands fa-instagram icon-colored')
+                        span @garrettsbargrill
+
+                    p(class='text-header') Location
+                    a(href='https://maps.app.goo.gl/RvcGZRTysG77B7dE9' target='_blank')
+                        p #{MAP_STREET}
+                        p #{MAP_CITY}
+                
+                //- Google Maps
+                div(class='flex-sbs-section')
+                    iframe(
+                        src=`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.7315887594377!2d-122.0440090243047!3d37.39617947208323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb73b55878469%3A0x3cd687a07f29a8de!2sGarrett's%20Bar%20%26%20Grill!5e0!3m2!1sen!2sus!4v1716778343282!5m2!1sen!2sus` 
+                        style='border: 1px solid var(--color-accent);' 
+                        class='special-shadow'
+                        width='100%' 
+                        height='100%' 
+                        loading='lazy' 
+                        referrerpolicy='no-referrer-when-downgrade'
+                    )
+                
+                //- Developer Credit
+                div(class='flex-sbs-section')
+                    a(href='https://github.com/bakonpancakz' target='_blank' style='opacity: 0.69;') 
+                        | - Website by JS -
